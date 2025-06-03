@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "956c7f24-b9b7-428b-a3a5-b68835635082",
+		"name": "Odine Freelance Marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44740690",
+		"_collection_link": "https://speeding-eclipse-2318198.postman.co/workspace/Bora-%C3%87akmak's-Workspace~568b2b85-a0df-4e16-8b33-ba8310c25318/collection/44740690-956c7f24-b9b7-428b-a3a5-b68835635082?action=share&source=collection_link&creator=44740690"
+	},
+	"item": [
+		{
+			"name": "First Freelancer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Bora Çakmak\",\r\n  \"email\": \"bora.cakmak@hotmail.com\",\r\n  \"phone\": \"05469572103\",\r\n  \"city\": \"Istanbul\",\r\n  \"freelancerType\": \"SOFTWARE_DEVELOPER\",\r\n  \"languagesKnown\": [\"Java\", \"C#\"],\r\n  \"specialties\": [\"Backend\", \"GameDesign\"],\r\n  \"evaluationScore\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/freelancers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"freelancers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Second Freelancer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Ege Çakmak\",\r\n  \"email\": \"ege-cakmak@hotmail.com\",\r\n  \"phone\": \"0123456789\",\r\n  \"city\": \"Istanbul\",\r\n  \"freelancerType\": \"SOFTWARE_DEVELOPER\",\r\n  \"languagesKnown\": [\"Java\", \"Python\"],\r\n  \"specialties\": [\"Backend\", \"Frontend\"],\r\n  \"evaluationScore\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/freelancers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"freelancers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Freelancers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/freelancers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"freelancers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Freelancer by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/freelancers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"freelancers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Freelancer by type",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/freelancers/search?freelancerType=SOFTWARE_DEVELOPER",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"freelancers",
+						"search"
+					],
+					"query": [
+						{
+							"key": "freelancerType",
+							"value": "SOFTWARE_DEVELOPER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"freelancerId\": 1,\r\n  \"jobStatus\": \"IN_PROGRESS\",\r\n  \"description\": \"Build an API for OdineFreelanceMarketplace\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Job for another Freelancer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"freelancerId\": 2,\r\n  \"jobStatus\": \"FINISHED\",\r\n  \"description\": \"Code the backend for the website of x.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Jobs of a Freelancer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"freelancerId\": 2,\r\n  \"jobStatus\": \"FINISHED\",\r\n  \"description\": \"Code the backend for the website of x.\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/jobs/freelancer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobs",
+						"freelancer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a spesific Job",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"freelancerId\": 2,\r\n  \"jobStatus\": \"FINISHED\",\r\n  \"description\": \"Code the backend for the website of x.\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/jobs/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobs",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Job",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"jobStatus\": \"FINISHED\",\r\n  \"description\": \"Build an API for OdineFreelanceMarketplace\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jobs/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Comment for a Job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"jobId\": 1,\r\n  \"commenterName\": \"Client A\",\r\n  \"comment\": \"Excellent work!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Comments of a Job",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"jobId\": 1,\r\n  \"commenterName\": \"Client A\",\r\n  \"comment\": \"Excellent work!\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments/job/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"job",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Comment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"comment\": \"Great work, would hire again!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
