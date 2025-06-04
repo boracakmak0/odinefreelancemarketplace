@@ -45,6 +45,9 @@ A Spring Boot RESTful API for managing freelancers, jobs, and job comments.
 > Steps
 - Clone the repository.
 - Build the project using Maven.
+- Before running the program, update the src/main/resources/application.properties file and provide your database credentials:
+    - spring.datasource.username= [your username here]
+    - spring.datasource.password= [your password here]
 - Run the main method in src/main/java/org/example/Main.java.
 - The backend will start on http://localhost:8080
 
